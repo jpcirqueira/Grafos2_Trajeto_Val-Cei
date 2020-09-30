@@ -1,9 +1,9 @@
-grafo = { "A" : { "B" : 1, "C":2 },
-          "B" : { "D":2, "E":4 },
-          "C" : { "E":2 },
-          "D" : { "F": 6 },
-          "E" : { "F": 7 },
-          "F" : { }
+grafo = { "Rua A" : { "Rua B" : 1, "Rua C":2 },
+          "Rua B" : { "Rua D":2, "Rua E":4 },
+          "Rua C" : { "Rua E":3 },
+          "Rua D" : { "Rua F": 6 },
+          "Rua E" : { "Rua F": 6 },
+          "Rua F" : { }
           }
 
 def dijkstra(grafo, origem): #retorna a menor distancia de um dado nó para todos os outros possíveis.
@@ -75,7 +75,7 @@ def dijkstra_distancia(grafo, origem, fim): #retorna a menor distancia de um No 
         del controle[atual]
 
     print("A menor distância da rua  %s até %s é: %s" % (origem, fim, distanciaAtual[fim][0]))
-    print("O menor caminho é: %s" % printPath(distanciaAtual,origem, fim))          
+    print("O menor caminho é: %s" % print_distancia(distanciaAtual,origem, fim))          
     
 def dijkstra_tempo(grafo, origem, fim): #retorna a menor tempo
 
@@ -120,6 +120,3 @@ def print_distancia(distancias,inicio, fim):
         else:
             return inicio
 
-
-##dijkstra(grafo, "A")
-##dijkstra_path(grafo, "A", "F")
