@@ -1,12 +1,4 @@
-grafo = { "Rua A" : { "Rua B" : 1, "Rua C":2 },
-          "Rua B" : { "Rua D":2, "Rua E":4 },
-          "Rua C" : { "Rua E":3 },
-          "Rua D" : { "Rua F": 6 },
-          "Rua E" : { "Rua F": 6 },
-          "Rua F" : { }
-          }
-
-def dijkstra(grafo, origem): #retorna a menor distancia de um dado nó para todos os outros possíveis.
+def dijkstra(grafo_valparaiso_ceilandia, origem): #retorna a menor distancia de um dado nó para todos os outros possíveis.
 
     controle = { }
     distanciaAtual = { }
@@ -16,7 +8,7 @@ def dijkstra(grafo, origem): #retorna a menor distancia de um dado nó para todo
     noAtual[atual] = 0
 
     
-    for vertice in grafo.keys():
+    for vertice in grafo_valparaiso_ceilandia.keys():
         naoVisitados.append(vertice) #inclui os vertices nos não visitados    
         distanciaAtual[vertice] = float('inf') #inicia os vertices como infinito
 
@@ -25,7 +17,7 @@ def dijkstra(grafo, origem): #retorna a menor distancia de um dado nó para todo
     naoVisitados.remove(atual)
 
     while naoVisitados:
-        for vizinho, peso in grafo[atual].items():
+        for vizinho, peso in grafo_valparaiso_ceilandia[atual].items():
              pesoCalc = peso + noAtual[atual]
              if distanciaAtual[vizinho] == float("inf") or distanciaAtual[vizinho] > pesoCalc:
                  distanciaAtual[vizinho] = pesoCalc
@@ -41,7 +33,7 @@ def dijkstra(grafo, origem): #retorna a menor distancia de um dado nó para todo
     print(distanciaAtual)
 
 
-def dijkstra_distancia(grafo, origem, fim): #retorna a menor distancia de um No origem até um No destino e o caminho até ele
+def dijkstra_distancia(grafo_valparaiso_ceilandia, origem, fim): #retorna a menor distancia de um No origem até um No destino e o caminho até ele
 
     controle = { }
     distanciaAtual = { }
@@ -51,7 +43,7 @@ def dijkstra_distancia(grafo, origem, fim): #retorna a menor distancia de um No 
     noAtual[atual] = 0
 
     
-    for vertice in grafo.keys():
+    for vertice in grafo_valparaiso_ceilandia.keys():
         naoVisitados.append(vertice) #inclui os vertices nos não visitados    
         distanciaAtual[vertice] = float('inf') #inicia os vertices como infinito
 
@@ -60,7 +52,7 @@ def dijkstra_distancia(grafo, origem, fim): #retorna a menor distancia de um No 
     naoVisitados.remove(atual)
 
     while naoVisitados:
-        for vizinho, peso in grafo[atual].items():
+        for vizinho, peso in grafo_valparaiso_ceilandia[atual].items():
              pesoCalc = peso + noAtual[atual]
              if distanciaAtual[vizinho] == float("inf") or distanciaAtual[vizinho][0] > pesoCalc:
                  distanciaAtual[vizinho] = [pesoCalc,atual]
@@ -77,7 +69,7 @@ def dijkstra_distancia(grafo, origem, fim): #retorna a menor distancia de um No 
     print("A menor distância da rua  %s até %s é: %s" % (origem, fim, distanciaAtual[fim][0]))
     print("O menor caminho é: %s" % print_distancia(distanciaAtual,origem, fim))          
     
-def dijkstra_tempo(grafo, origem, fim): #retorna a menor tempo
+def dijkstra_tempo(grafo_valparaiso_ceilandia, origem, fim): #retorna a menor tempo
 
     controle = { }
     distanciaAtual = { }
@@ -87,7 +79,7 @@ def dijkstra_tempo(grafo, origem, fim): #retorna a menor tempo
     noAtual[atual] = 0
 
     
-    for vertice in grafo.keys():
+    for vertice in grafo_valparaiso_ceilandia.keys():
         naoVisitados.append(vertice)    
         distanciaAtual[vertice] = float('inf') 
 
@@ -96,7 +88,7 @@ def dijkstra_tempo(grafo, origem, fim): #retorna a menor tempo
     naoVisitados.remove(atual)
 
     while naoVisitados:
-        for vizinho, peso in grafo[atual].items():
+        for vizinho, peso in grafo_valparaiso_ceilandia[atual].items():
              pesoCalc = peso + noAtual[atual]
              if distanciaAtual[vizinho] == float("inf") or distanciaAtual[vizinho][0] > pesoCalc:
                  distanciaAtual[vizinho] = [pesoCalc,atual]
