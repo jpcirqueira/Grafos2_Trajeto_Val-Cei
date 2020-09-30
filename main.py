@@ -1,4 +1,5 @@
 import dijkstra
+import engarrafamento
 
 grafo_valparaiso_ceilandia = { 
         "Valparaiso" : { "SantaMaria" : 3.5 },
@@ -13,5 +14,13 @@ grafo_valparaiso_ceilandia = {
 
 print("os pontos de referencias de valparaiso a ceilandia: Santa Maria, EPTC, Guara II, Cruzeiro Novo, Samambaia Sul , BR-070")
 
-dijkstra.dijkstra_distancia(grafo_valparaiso_ceilandia,"Valparaiso","Ceilandia")
+
 ##dijkstra.dijkstra_distancia(grafo,"A","E")
+
+grafo = engarrafamento.main(grafo_valparaiso_ceilandia,"EPTC","SamambaiaSul", "moderado")
+#grafo = engarrafamento.main(grafo_valparaiso_ceilandia,"SamambaiaSul","Ceilandia", "moderado")
+grafo = engarrafamento.main(grafo_valparaiso_ceilandia,"Valparaiso","SantaMaria", "moderado")
+grafo = engarrafamento.main(grafo_valparaiso_ceilandia,"SantaMaria","CruzeiroNovo", "pesado")
+grafo = engarrafamento.main(grafo_valparaiso_ceilandia,"CruzeiroNovo","Ceilandia", "pesado")
+grafo = engarrafamento.main(grafo_valparaiso_ceilandia,"SamambaiaSul","Ceilandia", "pesado")
+dijkstra.dijkstra_distancia(grafo,"Valparaiso","Ceilandia")
