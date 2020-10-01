@@ -12,15 +12,47 @@ grafo_valparaiso_ceilandia = {
         "Ceilandia": { }
         }
 
-print("os pontos de referencias de valparaiso a ceilandia: Santa Maria, EPTC, Guara II, Cruzeiro Novo, Samambaia Sul , BR-070")
+
 
 
 ##dijkstra.dijkstra_distancia(grafo,"A","E")
 
-grafo = engarrafamento.main(grafo_valparaiso_ceilandia,"EPTC","SamambaiaSul", "moderado")
-#grafo = engarrafamento.main(grafo_valparaiso_ceilandia,"SamambaiaSul","Ceilandia", "moderado")
-grafo = engarrafamento.main(grafo_valparaiso_ceilandia,"Valparaiso","SantaMaria", "moderado")
-grafo = engarrafamento.main(grafo_valparaiso_ceilandia,"SantaMaria","CruzeiroNovo", "pesado")
-grafo = engarrafamento.main(grafo_valparaiso_ceilandia,"CruzeiroNovo","Ceilandia", "pesado")
-grafo = engarrafamento.main(grafo_valparaiso_ceilandia,"SamambaiaSul","Ceilandia", "pesado")
-dijkstra.dijkstra_distancia(grafo,"Valparaiso","Ceilandia")
+
+
+
+
+def print_menu():
+    print(30 * "-" , "MENU" , 30 * "-")
+    print("1. Mostra as arestas do grafo")
+    print("2. insere engarramento em algum caminho")
+    print("3. Mostra o melhor caminho do valparaiso a ceilandia") 
+    print("4. Abre o maps com o menor caminho")
+    print("5. Sair")
+    print(67 * "-")
+  
+
+
+if __name__ == '__main__':
+    loop=True
+    
+    while loop:
+        print_menu()
+        choice = input("Entre sua opcao [1-5]: ")
+        if choice=='1':     
+            print("Opcao 1 foi escolhida")
+            print("os pontos de referencias de valparaiso a ceilandia: Santa Maria, EPTC, Guara II, Cruzeiro Novo, Samambaia Sul , BR-070")        
+        elif choice=='2':
+            print("Opcao 2 foi escolhida")
+            grafo = engarrafamento.main(grafo_valparaiso_ceilandia,"EPTC","SamambaiaSul", "moderado")    
+        elif choice=='3':
+            print("Opcao 3 foi escolhida")
+            melhorrota = dijkstra.dijkstra_distancia(grafo,"Valparaiso","Ceilandia")
+        elif choice=='4':
+            print("Opcao 4 foi escolhida")
+            rota.main(melhorrota)
+        elif choice=='5':
+            print("Opcao 5 foi escolhida")
+            print('Saindo....')
+            loop=False
+        else:
+            input("Opcao incorreta. Aperte qualquer tecla para tentar novamente..")
