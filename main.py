@@ -12,8 +12,8 @@ grafo_valparaiso_ceilandia = {
         "Ceilandia": { }
         }
 
-
-
+grafo = {}
+melhorrota = ""
 
 ##dijkstra.dijkstra_distancia(grafo,"A","E")
 
@@ -43,13 +43,19 @@ if __name__ == '__main__':
             print("os pontos de referencias de valparaiso a ceilandia: Santa Maria, EPTC, Guara II, Cruzeiro Novo, Samambaia Sul , BR-070")        
         elif choice=='2':
             print("Opcao 2 foi escolhida")
-            grafo = engarrafamento.main(grafo_valparaiso_ceilandia,"EPTC","SamambaiaSul", "moderado")    
+            grafo = engarrafamento.main(grafo_valparaiso_ceilandia,"Valparaiso","SantaMaria", "leve")    
         elif choice=='3':
             print("Opcao 3 foi escolhida")
-            melhorrota = dijkstra.dijkstra_distancia(grafo,"Valparaiso","Ceilandia")
+            if grafo != {}:
+                melhorrota = dijkstra.dijkstra_distancia(grafo,"Valparaiso","Ceilandia")
+            else:
+                melhorrota = dijkstra.dijkstra_distancia(grafo_valparaiso_ceilandia,"Valparaiso","Ceilandia")           
         elif choice=='4':
             print("Opcao 4 foi escolhida")
-            rota.main(melhorrota)
+            if melhorrota == "":
+                print("Escolha uma rota usando opção 3")
+            else:   
+                rota.main(melhorrota)
         elif choice=='5':
             print("Opcao 5 foi escolhida")
             print('Saindo....')

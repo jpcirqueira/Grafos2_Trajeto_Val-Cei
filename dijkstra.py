@@ -66,47 +66,11 @@ def dijkstra_distancia(grafo_valparaiso_ceilandia, origem, fim): #retorna a meno
         naoVisitados.remove(atual)
         del controle[atual]
 
-    print("A menor distância da rua  %s até %s é: %s" % (origem, fim, distanciaAtual[fim][0]))
+    ##print("A menor distância  %s até %s é: %s" % (origem, fim, distanciaAtual[fim][0]))
     rota = print_distancia(distanciaAtual,origem, fim)
-    print("O menor caminho é: %s" % print_distancia(distanciaAtual,origem, fim))
+    print("O melhor caminho de Valparaiso até Ceilândia é: %s" % rota)
     return rota
-    
-def dijkstra_tempo(grafo_valparaiso_ceilandia, origem, fim): #retorna a menor tempo
-
-    controle = { }
-    distanciaAtual = { }
-    noAtual = { }
-    naoVisitados = []
-    atual = origem
-    noAtual[atual] = 0
-
-    
-    for vertice in grafo_valparaiso_ceilandia.keys():
-        naoVisitados.append(vertice)    
-        distanciaAtual[vertice] = float('inf') 
-
-    distanciaAtual[atual] = [0,origem] 
-
-    naoVisitados.remove(atual)
-
-    while naoVisitados:
-        for vizinho, peso in grafo_valparaiso_ceilandia[atual].items():
-             pesoCalc = peso + noAtual[atual]
-             if distanciaAtual[vizinho] == float("inf") or distanciaAtual[vizinho][0] > pesoCalc:
-                 distanciaAtual[vizinho] = [pesoCalc,atual]
-                 controle[vizinho] = pesoCalc
-                 print(controle)
-                 
-        if controle == {} : break    
-        minVizinho = min(controle.items(), key=lambda x: x[1])
-        atual=minVizinho[0]
-        noAtual[atual] = minVizinho[1]
-        naoVisitados.remove(atual)
-        del controle[atual]
-
-    print("A menor tempo da rua  %s para a rua%s é: %s" % (origem, fim, distanciaAtual[fim][0]))
-    ## print("O menor tempo é: %s" % print_distancia(distanciaAtual,origem, fim))          
-    
+            
 
 def print_distancia(distancias,inicio, fim):
         if  fim != inicio:
