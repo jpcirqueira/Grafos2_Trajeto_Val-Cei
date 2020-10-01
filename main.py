@@ -1,6 +1,6 @@
 import dijkstra
 import engarrafamento
-
+import rota
 grafo_valparaiso_ceilandia = { 
         "Valparaiso" : { "SantaMaria" : 3.5 },
         "SantaMaria" : {"EPTC": 9.5, "GuaraII":22.5, "CruzeiroNovo": 32.4},

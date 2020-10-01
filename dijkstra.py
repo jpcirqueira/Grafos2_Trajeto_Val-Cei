@@ -67,7 +67,9 @@ def dijkstra_distancia(grafo_valparaiso_ceilandia, origem, fim): #retorna a meno
         del controle[atual]
 
     print("A menor distância da rua  %s até %s é: %s" % (origem, fim, distanciaAtual[fim][0]))
-    print("O menor caminho é: %s" % print_distancia(distanciaAtual,origem, fim))          
+    rota = print_distancia(distanciaAtual,origem, fim)
+    print("O menor caminho é: %s" % print_distancia(distanciaAtual,origem, fim))
+    return rota
     
 def dijkstra_tempo(grafo_valparaiso_ceilandia, origem, fim): #retorna a menor tempo
 
