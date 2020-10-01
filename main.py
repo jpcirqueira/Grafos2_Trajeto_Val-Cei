@@ -40,10 +40,19 @@ if __name__ == '__main__':
         choice = input("Entre sua opcao [1-5]: ")
         if choice=='1':     
             print("Opcao 1 foi escolhida")
-            print("os pontos de referencias de valparaiso a ceilandia: Santa Maria, EPTC, Guara II, Cruzeiro Novo, Samambaia Sul , BR-070")        
+            print("os pontos de referencias de valparaiso a ceilandia: Santa Maria, EPTC, Guara II, Cruzeiro Novo, Samambaia Sul , BR-070\n")        
         elif choice=='2':
             print("Opcao 2 foi escolhida")
-            grafo = engarrafamento.main(grafo_valparaiso_ceilandia,"Valparaiso","SantaMaria", "leve")    
+            inicio_engarrafamento = input('digite o inicio do engarrafamento\n')
+            fim_engarrafamento = input('digite o fim do engarrafamento\n')
+            c = input("Digite 1 para engarrafamento leve - 2 para engarrafamento moderado - 3 para engarrafamento pesado\n: ")
+            if c=='1':
+                    tipoengarrafamento = "leve"
+            if c=='2':
+                    tipoengarrafamento = "moderado"
+            if c=='3':
+                    tipoengarrafamento = "pesado"
+            grafo = engarrafamento.main(grafo_valparaiso_ceilandia,inicio_engarrafamento,fim_engarrafamento, tipoengarrafamento)    
         elif choice=='3':
             print("Opcao 3 foi escolhida")
             if grafo != {}:
@@ -56,6 +65,7 @@ if __name__ == '__main__':
                 print("Escolha uma rota usando opção 3")
             else:   
                 rota.main(melhorrota)
+                loop=False
         elif choice=='5':
             print("Opcao 5 foi escolhida")
             print('Saindo....')
