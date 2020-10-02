@@ -25,7 +25,7 @@ def print_menu():
     print(30 * "-" , "MENU" , 30 * "-")
     print("1. insere engarramento em algum caminho")
     print("2. Mostra o melhor caminho do valparaiso a ceilandia") 
-    print("3. Abre o maps com o menor caminho")
+    print("3. Abre o maps com o melhor caminho")
     print("4. Sair")
     print(67 * "-")
   
@@ -62,7 +62,6 @@ if __name__ == '__main__':
                 print("Escolha uma rota usando opção 3")
             else:   
                 rota.main(melhorrota)
-                loop=False
         elif choice=='4':
             print("Opcao 5 foi escolhida")
             print('Saindo....')
