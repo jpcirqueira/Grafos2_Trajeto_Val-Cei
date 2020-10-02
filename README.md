@@ -13,10 +13,13 @@
 O projeto consiste em calcular a melhor rota da cidade valparaiso até a cidade de ceilandia, a partir de alguns pontos definidos pela equipe atravez do google maps. O usuario ira poder incluir engarrafamentos em algun pontos do trajeto, assim o algoritimo ira considerar o engarrafamento para o calculo do melhor caminho.
 
 ### Pontos definidos:
-![Pontos](./valparaiso_ceilandia.jpeg)
+![Pontos](./assets/valparaiso_ceilandia.jpeg)
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+
+![Opção 1](./assets/opcao1.png)
+
+![Opção 2](./assets/opcao2.png)
 
 ## Instalação 
 **Linguagem**: Python<br>
@@ -35,7 +38,3 @@ siga as intruções do termial
 ## Video 
 
 O video com a explicação sobre o projeto está dentro da pasta video.
-
-
-
-
