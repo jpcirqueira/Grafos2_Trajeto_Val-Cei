@@ -15,12 +15,6 @@ grafo_valparaiso_ceilandia = {
 grafo = {}
 melhorrota = ""
 
-##dijkstra.dijkstra_distancia(grafo,"A","E")
-
-
-
-
-
 def print_menu():
     print(30 * "-" , "MENU" , 30 * "-")
     print("1. insere engarramento em algum caminho")
@@ -36,7 +30,7 @@ if __name__ == '__main__':
     
     while loop:
         print_menu()
-        choice = input("Entre sua opcao [1-5]: ")            
+        choice = input("Entre sua opcao [1-4]: ")            
         if choice=='1':
             print("Opcao 2 foi escolhida")
             print("os pontos de referencias de valparaiso a ceilandia: SantaMaria, EPTC, GuaraII, CruzeiroNovo, SamambaiaSul , BR-070\n")

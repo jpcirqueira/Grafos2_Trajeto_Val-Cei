@@ -66,7 +66,6 @@ def dijkstra_distancia(grafo_valparaiso_ceilandia, origem, fim): #retorna a meno
         naoVisitados.remove(atual)
         del controle[atual]
 
-    ##print("A menor distância  %s até %s é: %s" % (origem, fim, distanciaAtual[fim][0]))
     rota = print_distancia(distanciaAtual,origem, fim)
     print("O melhor caminho de Valparaiso até Ceilândia é: %s" % rota)
     return rota
@@ -77,4 +76,3 @@ def print_distancia(distancias,inicio, fim):
             return "%s -- %s" % (print_distancia(distancias,inicio, distancias[fim][1]),fim)
         else:
             return inicio
-
