@@ -23,11 +23,10 @@ melhorrota = ""
 
 def print_menu():
     print(30 * "-" , "MENU" , 30 * "-")
-    print("1. Mostra as arestas do grafo")
-    print("2. insere engarramento em algum caminho")
-    print("3. Mostra o melhor caminho do valparaiso a ceilandia") 
-    print("4. Abre o maps com o menor caminho")
-    print("5. Sair")
+    print("1. insere engarramento em algum caminho")
+    print("2. Mostra o melhor caminho do valparaiso a ceilandia") 
+    print("3. Abre o maps com o menor caminho")
+    print("4. Sair")
     print(67 * "-")
   
 
@@ -37,12 +36,10 @@ if __name__ == '__main__':
     
     while loop:
         print_menu()
-        choice = input("Entre sua opcao [1-5]: ")
-        if choice=='1':     
-            print("Opcao 1 foi escolhida")
-            print("os pontos de referencias de valparaiso a ceilandia: Santa Maria, EPTC, Guara II, Cruzeiro Novo, Samambaia Sul , BR-070\n")        
-        elif choice=='2':
+        choice = input("Entre sua opcao [1-5]: ")            
+        if choice=='1':
             print("Opcao 2 foi escolhida")
+            print("os pontos de referencias de valparaiso a ceilandia: SantaMaria, EPTC, GuaraII, CruzeiroNovo, SamambaiaSul , BR-070\n")
             inicio_engarrafamento = input('digite o inicio do engarrafamento\n')
             fim_engarrafamento = input('digite o fim do engarrafamento\n')
             c = input("Digite 1 para engarrafamento leve - 2 para engarrafamento moderado - 3 para engarrafamento pesado\n: ")
@@ -53,20 +50,20 @@ if __name__ == '__main__':
             if c=='3':
                     tipoengarrafamento = "pesado"
             grafo = engarrafamento.main(grafo_valparaiso_ceilandia,inicio_engarrafamento,fim_engarrafamento, tipoengarrafamento)    
-        elif choice=='3':
+        elif choice=='2':
             print("Opcao 3 foi escolhida")
             if grafo != {}:
                 melhorrota = dijkstra.dijkstra_distancia(grafo,"Valparaiso","Ceilandia")
             else:
                 melhorrota = dijkstra.dijkstra_distancia(grafo_valparaiso_ceilandia,"Valparaiso","Ceilandia")           
-        elif choice=='4':
+        elif choice=='3':
             print("Opcao 4 foi escolhida")
             if melhorrota == "":
                 print("Escolha uma rota usando opção 3")
             else:   
                 rota.main(melhorrota)
                 loop=False
-        elif choice=='5':
+        elif choice=='4':
             print("Opcao 5 foi escolhida")
             print('Saindo....')
             loop=False

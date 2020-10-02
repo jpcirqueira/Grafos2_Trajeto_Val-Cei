@@ -10,7 +10,10 @@
 | 15/0136862  |  Lucas Alexandre Fernandes Martins |
 
 ## Sobre 
-O projeto consiste em calcular a melhor rota da cidade valparaiso até a cidade de ceilandia, a partir de alguns pontos definidos pela equipe atravez do google maps. O usuario ira poder incluir engarrafamentos em algun pontos do trajeto, assim o algoritimo ira considerar o engarrafamento para o calculo do melhor caminho. 
+O projeto consiste em calcular a melhor rota da cidade valparaiso até a cidade de ceilandia, a partir de alguns pontos definidos pela equipe atravez do google maps. O usuario ira poder incluir engarrafamentos em algun pontos do trajeto, assim o algoritimo ira considerar o engarrafamento para o calculo do melhor caminho.
+
+### Pontos definidos:
+![Pontos](./valparaiso_ceilandia.jpeg)
 
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em funcionamento.
@@ -18,13 +21,11 @@ Adicione 3 ou mais screenshots do projeto em funcionamento.
 ## Instalação 
 **Linguagem**: Python<br>
 
-``` $  ```
-
 ### Linux
 
 #### Pelo terminal
 - Para clonar o repositório:
-> $ git clone https://github.com/projeto-de-algoritmos/Grafos2_Dupla2_B
+> $ git clone https://github.com/projeto-de-algoritmos/Grafos2_Trajeto_Val-Cei
 
 ## Uso 
 Execute o programa com o comando 
@@ -32,7 +33,8 @@ Execute o programa com o comando
 siga as intruções do termial
 
 ## Video 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+
+O video com a explicação sobre o projeto está dentro da pasta video.
 
 
 
